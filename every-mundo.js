@@ -4,15 +4,15 @@
       'PROS - Adnetify is already instantiated: ',
       window.__ADNETIFY_SCRIPT
     );
-    
-    const existeScript = Array.from(document.querySelectorAll('script')).find(
-      (script) => script.src === window.__ADNETIFY_SCRIPT
-    );
 
-    if (existeScript) {
-      existeScript.remove();
-      console.info('PROS - Adnetify script removed');
-    }
+    const scripts = Array.from(document.querySelectorAll('script'));
+    scripts.forEach((script) => {
+      if (script.src === window.__ADNETIFY_SCRIPT) {
+        script.remove();
+        console.info('PROS - Adnetify script removed');
+      }
+    });
+
     delete window.__ADNETIFY_SCRIPT;
   }
 
