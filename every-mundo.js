@@ -4,20 +4,18 @@
       'PROS - Adnetify is already instantiated: ',
       window.__ADNETIFY_SCRIPT
     );
-
-    // buscar el script
-    const existeScript  = Array.from(document.querySelectorAll('script')).find(
+    
+    const existeScript = Array.from(document.querySelectorAll('script')).find(
       (script) => script.src === window.__ADNETIFY_SCRIPT
     );
 
-    // si lo encuentra, lo desmonta
     if (existeScript) {
-      existeScript.remove()
-      console.info('PROS - Adnetify script removed')
+      existeScript.remove();
+      console.info('PROS - Adnetify script removed');
     }
-
-    delete window.__ADNETIFY_SCRIPT
+    delete window.__ADNETIFY_SCRIPT;
   }
+
   var adnetify = document.createElement('script');
   var src =
     document.querySelectorAll('[data-container-id^="mm2-"]').length > 0
@@ -31,6 +29,7 @@
   adnetify.onerror = function () {
     console.info('PROS - Adnetify could not be loaded');
   };
+
   document.body.appendChild(adnetify);
   window.__ADNETIFY_SCRIPT = src;
 })();
