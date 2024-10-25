@@ -4,7 +4,6 @@
       'PROS - Adnetify is already instantiated: ',
       window.__ADNETIFY_SCRIPT
     );
-    return;
   }
   var adnetify = document.createElement('script');
   var src =
