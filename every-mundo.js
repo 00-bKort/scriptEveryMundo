@@ -5,11 +5,11 @@
       window.__ADNETIFY_SCRIPT
     );
 
-    const existingScript = Array.from(document.querySelectorAll('script')).find(
+    const existeScript = Array.from(document.querySelectorAll('script')).find(
       (script) => script.src === window.__ADNETIFY_SCRIPT
     );
-    if (existingScript) {
-      existingScript.remove();
+    if (existeScript) {
+      existeScript.remove();
       console.info('PROS - Adnetify script removed');
     }
 
