@@ -5,16 +5,18 @@
       window.__ADNETIFY_SCRIPT
     );
 
-    const existeScript = Array.from(document.querySelectorAll('script')).find(
+    // buscar el script
+    const existeScript  = Array.from(document.querySelectorAll('script')).find(
       (script) => script.src === window.__ADNETIFY_SCRIPT
     );
+
+    // si lo encuentra, lo desmonta
     if (existeScript) {
-      existeScript.remove();
-      console.info('PROS - Adnetify script removed');
+      existeScript.remove()
+      console.info('PROS - Adnetify script removed')
     }
 
-    window.__ADNETIFY_SCRIPT = null;
-    return;
+    delete window.__ADNETIFY_SCRIPT
   }
   var adnetify = document.createElement('script');
   var src =
